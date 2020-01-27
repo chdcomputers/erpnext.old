@@ -74,6 +74,22 @@ $.extend(erpnext, {
 			);
 		});
 	},
+
+	route_to_adjustment_jv: (args) => {
+		frappe.model.with_doctype('Journal Entry', () => {
+			// route to adjustment Journal Entry to handle Account Balance and Stock Value mismatch
+			let journal_entry = frappe.model.get_new_doc('Journal Entry');
+
+			args.accounts.forEach((je_account) => {
+				let child_row = frappe.model.add_child(journal_entry, "accounts");
+				child_row.account = je_account.account;
+				child_row.debit_in_account_currency = je_account.debit_in_account_currency;
+				child_row.credit_in_account_currency = je_account.credit_in_account_currency;
+				child_row.party_type = "" ;
+			});
+			frappe.set_route('Form','Journal Entry', journal_entry.name);
+		});
+	}
 });
 
 
@@ -442,7 +458,8 @@ erpnext.utils.update_child_items = function(opts) {
 					fieldname:"item_code",
 					options: 'Item',
 					in_list_view: 1,
-					read_only: 1,
+					read_only: 0,
+					disabled: 0,
 					label: __('Item Code')
 				}, {
 					fieldtype:'Float',
@@ -485,6 +502,7 @@ erpnext.utils.update_child_items = function(opts) {
 	frm.doc[opts.child_docname].forEach(d => {
 		dialog.fields_dict.trans_items.df.data.push({
 			"docname": d.name,
+			"name": d.name,
 			"item_code": d.item_code,
 			"qty": d.qty,
 			"rate": d.rate,
