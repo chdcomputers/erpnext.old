@@ -188,6 +188,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			and tabItem.disabled=0
 			and (tabItem.end_of_life > %(today)s or ifnull(tabItem.end_of_life, '0000-00-00')='0000-00-00')
 			and ({scond} or tabItem.item_code IN (select parent from `tabItem Barcode` where barcode LIKE %(txt)s)
+						 or tabItem.item_code IN (select parent from `tabItem Supplier` where supplier_part_no LIKE %(txt)s)
 				{description_cond})
 			{fcond} {mcond}
 		order by
