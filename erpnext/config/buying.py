@@ -11,34 +11,29 @@ def get_data():
 					"type": "doctype",
 					"name": "Purchase Order",
 					"onboard": 1,
-					"dependencies": ["Item", "Supplier"],
-					"description": _("Purchase Orders given to Suppliers."),
+					"description": _("Purchase Orders given to Suppliers.")
 				},
 				{
 					"type": "doctype",
 					"name": "Purchase Invoice",
-					"onboard": 1,
-					"dependencies": ["Item", "Supplier"]
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Material Request",
 					"onboard": 1,
-					"dependencies": ["Item"],
-					"description": _("Request for purchase."),
+					"description": _("Request for purchase.")
 				},
 				{
 					"type": "doctype",
 					"name": "Request for Quotation",
 					"onboard": 1,
-					"dependencies": ["Item", "Supplier"],
-					"description": _("Request for quotation."),
+					"description": _("Request for quotation.")
 				},
 				{
 					"type": "doctype",
 					"name": "Supplier Quotation",
-					"dependencies": ["Item", "Supplier"],
-					"description": _("Quotations received from Suppliers."),
+					"description": _("Quotations received from Suppliers.")
 				},
 			]
 		},

@@ -17,35 +17,30 @@ def get_data():
 					"type": "doctype",
 					"name": "Quotation",
 					"description": _("Quotes to Leads or Customers."),
-					"onboard": 1,
-					"dependencies": ["Item", "Customer"],
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Sales Order",
 					"description": _("Confirmed orders from Customers."),
-					"onboard": 1,
-					"dependencies": ["Item", "Customer"],
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Sales Invoice",
 					"description": _("Invoices for Costumers."),
-					"onboard": 1,
-					"dependencies": ["Item", "Customer"],
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Blanket Order",
 					"description": _("Blanket Orders from Costumers."),
-					"onboard": 1,
-					"dependencies": ["Item", "Customer"],
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Sales Partner",
-					"description": _("Manage Sales Partners."),
-					"dependencies": ["Item"],
+					"description": _("Manage Sales Partners.")
 				},
 				{
 					"type": "doctype",
@@ -53,8 +48,7 @@ def get_data():
 					"name": "Sales Person",
 					"icon": "fa fa-sitemap",
 					"link": "Tree/Sales Person",
-					"description": _("Manage Sales Person Tree."),
-					"dependencies": ["Item", "Customer"],
+					"description": _("Manage Sales Person Tree.")
 				},
 				{
 					"type": "report",
@@ -68,8 +62,7 @@ def get_data():
 					"is_query_report": True,
 					"name": "Sales Person Target Variance (Item Group-Wise)",
 					"route": "#query-report/Sales Person Target Variance Item Group-Wise",
-					"doctype": "Sales Person",
-					"dependencies": ["Sales Person"],
+					"doctype": "Sales Person"
 				},
 			]
 		},
@@ -80,21 +73,20 @@ def get_data():
 					"type": "doctype",
 					"name": "Item",
 					"description": _("All Products or Services."),
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Item Price",
 					"description": _("Multiple Item prices."),
 					"route": "#Report/Item Price",
-					"dependencies": ["Item", "Price List"],
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Price List",
 					"description": _("Price List master."),
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
@@ -103,13 +95,12 @@ def get_data():
 					"label": _("Item Group"),
 					"link": "Tree/Item Group",
 					"description": _("Tree of Item Groups."),
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Product Bundle",
-					"description": _("Bundle items at time of sale."),
-					"dependencies": ["Item"],
+					"description": _("Bundle items at time of sale.")
 				},
 				{
 					"type": "doctype",
@@ -119,18 +110,17 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Pricing Rule",
-					"description": _("Rules for applying pricing and discount."),
-					"dependencies": ["Item"],
+					"description": _("Rules for applying pricing and discount.")
 				},
 				{
 					"type": "doctype",
 					"name": "Shipping Rule",
-					"description": _("Rules for adding shipping costs."),
+					"description": _("Rules for adding shipping costs.")
 				},
 				{
 					"type": "doctype",
 					"name": "Coupon Code",
-					"description": _("Define coupon codes."),
+					"description": _("Define coupon codes.")
 				}
 			]
 		},
@@ -142,20 +132,20 @@ def get_data():
 					"type": "doctype",
 					"name": "Selling Settings",
 					"description": _("Default settings for selling transactions."),
-					"settings": 1,
+					"settings": 1
 				},
 				{
 					"type": "doctype",
 					"name":"Terms and Conditions",
 					"label": _("Terms and Conditions Template"),
 					"description": _("Template of terms or contract."),
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
 					"name": "Sales Taxes and Charges Template",
 					"description": _("Tax template for selling transactions."),
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "doctype",
@@ -168,17 +158,17 @@ def get_data():
 					"name": "Customer Group",
 					"icon": "fa fa-sitemap",
 					"link": "Tree/Customer Group",
-					"description": _("Manage Customer Group Tree."),
+					"description": _("Manage Customer Group Tree.")
 				},
 				{
 					"type": "doctype",
 					"name": "Contact",
-					"description": _("All Contacts."),
+					"description": _("All Contacts.")
 				},
 				{
 					"type": "doctype",
 					"name": "Address",
-					"description": _("All Addresses."),
+					"description": _("All Addresses.")
 				},
 				{
 					"type": "doctype",
@@ -186,12 +176,12 @@ def get_data():
 					"name": "Territory",
 					"icon": "fa fa-sitemap",
 					"link": "Tree/Territory",
-					"description": _("Manage Territory Tree."),
+					"description": _("Manage Territory Tree.")
 				},
 				{
 					"type": "doctype",
 					"name": "Campaign",
-					"description": _("Sales campaigns."),
+					"description": _("Sales campaigns.")
 				},
 			]
 		},
@@ -204,14 +194,14 @@ def get_data():
 					"is_query_report": True,
 					"name": "Sales Analytics",
 					"doctype": "Sales Order",
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "page",
 					"name": "sales-funnel",
 					"label": _("Sales Funnel"),
 					"icon": "fa fa-bar-chart",
-					"onboard": 1,
+					"onboard": 1
 				},
 				{
 					"type": "report",
@@ -288,7 +278,7 @@ def get_data():
 					"type": "report",
 					"is_query_report": True,
 					"name": "Available Stock for Packing Items",
-					"doctype": "Item",
+					"doctype": "Item"
 				},
 				{
 					"type": "report",
