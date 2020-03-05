@@ -1,28 +1,28 @@
 DocType: Accounting Period,Period Name,Όνομα περιόδου
 DocType: Employee,Salary Mode,Λειτουργία Μισθός
-apps/erpnext/erpnext/public/js/hub/marketplace.js,Register,Κανω ΕΓΓΡΑΦΗ
-apps/erpnext/erpnext/stock/doctype/material_request/material_request_list.js,Partially Received,Εν μέρει παραλήφθηκε
+apps/erpnext/erpnext/public/js/hub/marketplace.js,Register,Εγγραφείτε
+apps/erpnext/erpnext/stock/doctype/material_request/material_request_list.js,Partially Received,Μερικώς παραληφθέντα
 DocType: Patient,Divorced,Διαζευγμένος
 DocType: Support Settings,Post Route Key,Κλειδί διαδρομής μετά
 apps/erpnext/erpnext/hr/notification/training_scheduled/training_scheduled.html,Event Link,Σύνδεσμος συμβάντων
-DocType: Buying Settings,Allow Item to be added multiple times in a transaction,Επιτρέψτε στοιχείου να προστεθούν πολλές φορές σε μια συναλλαγή
+DocType: Buying Settings,Allow Item to be added multiple times in a transaction,Να επιτρέπεται η πολλαπλή καταχώρηση του ίδιου είδους σε μια συναλλαγή
 DocType: Content Question,Content Question,Ερώτηση περιεχομένου
 apps/erpnext/erpnext/support/doctype/warranty_claim/warranty_claim.py,Cancel Material Visit {0} before cancelling this Warranty Claim,Ακύρωση επίσκεψης {0} πριν από την ακύρωση αυτής της αίτησης εγγύησης
-DocType: Customer Feedback Table,Qualitative Feedback,Ποιοτική ανάδραση
+DocType: Customer Feedback Table,Qualitative Feedback,Ποιοτικό feedback
 apps/erpnext/erpnext/config/education.py,Assessment Reports,Εκθέσεις αξιολόγησης
-DocType: Invoice Discounting,Accounts Receivable Discounted Account,Απαιτούμενος Λογαριασμός Εισπρακτέων Λογαριασμών
+DocType: Invoice Discounting,Accounts Receivable Discounted Account,Λογαριασμός εκπτώσεων Εισπρακτέων
 apps/erpnext/erpnext/accounts/doctype/invoice_discounting/invoice_discounting_list.js,Canceled,Ακυρώθηκε
 apps/erpnext/erpnext/setup/setup_wizard/data/industry_type.py,Consumer Products,Καταναλωτικά προϊόντα
-DocType: Supplier Scorecard,Notify Supplier,Ειδοποιήστε τον προμηθευτή
-apps/erpnext/erpnext/accounts/report/payment_period_based_on_invoice_date/payment_period_based_on_invoice_date.js,Please select Party Type first,Επιλέξτε Τύπος Πάρτυ πρώτη
+DocType: Supplier Scorecard,Notify Supplier,Ειδοποίηση σε προμηθευτή
+apps/erpnext/erpnext/accounts/report/payment_period_based_on_invoice_date/payment_period_based_on_invoice_date.js,Please select Party Type first,Επιλέξτε τύπο αντισυμβαλλόμενου
 DocType: Item,Customer Items,Είδη πελάτη
-apps/erpnext/erpnext/accounts/report/balance_sheet/balance_sheet.py,Liabilities,Υποχρεώσεις
+apps/erpnext/erpnext/accounts/report/balance_sheet/balance_sheet.py,Liabilities,Παθητικό
 DocType: Project,Costing and Billing,Κοστολόγηση και Τιμολόγηση
 apps/erpnext/erpnext/hr/doctype/employee_advance/employee_advance.py,Advance account currency should be same as company currency {0},Το νόμισμα προπληρωμένου λογαριασμού θα πρέπει να είναι ίδιο με το νόμισμα της εταιρείας {0}
 DocType: QuickBooks Migrator,Token Endpoint,Σημείο τελικού σημείου
-apps/erpnext/erpnext/accounts/doctype/account/account.py,Account {0}: Parent account {1} can not be a ledger,Ο λογαριασμός {0}: γονικός λογαριασμός {1} δεν μπορεί να είναι καθολικός
+apps/erpnext/erpnext/accounts/doctype/account/account.py,Account {0}: Parent account {1} can not be a ledger,Λογαριασμός {0}: ο ανώτερος λογαριασμός {1} δεν μπορεί να είναι κινούμενος
 DocType: Item,Publish Item to hub.erpnext.com,Δημοσίευση είδους στο hub.erpnext.com
-apps/erpnext/erpnext/hr/doctype/leave_application/leave_application.py,Cannot find active Leave Period,Δεν είναι δυνατή η εύρεση ενεργής περιόδου άδειας
+apps/erpnext/erpnext/hr/doctype/leave_application/leave_application.py,Cannot find active Leave Period,Δεν είναι δυνατή η εύρεση ενεργής περιόδου αδείας
 apps/erpnext/erpnext/hr/doctype/employee/employee_dashboard.py,Evaluation,Αξιολόγηση
 DocType: Item,Default Unit of Measure,Προεπιλεγμένη μονάδα μέτρησης
 DocType: SMS Center,All Sales Partner Contact,Όλες οι επαφές συνεργάτη πωλήσεων
@@ -2885,7 +2885,7 @@ DocType: Purchase Receipt,MAT-PRE-.YYYY.-,MAT-PRE-.YYYY.-
 apps/erpnext/erpnext/controllers/website_list_for_contact.py,{0}% Billed,{0}% Χρεώθηκαν
 apps/erpnext/erpnext/stock/report/stock_projected_qty/stock_projected_qty.py,Reserved Qty,Δεσμευμένη ποσότητα
 DocType: Party Account,Party Account,Λογαριασμός συμβαλλόμενου
-apps/erpnext/erpnext/hr/doctype/staffing_plan/staffing_plan.py,Please select Company and Designation,Επιλέξτε Εταιρεία και ονομασία
+apps/erpnext/erpnext/hr/doctype/staffing_plan/staffing_plan.py,Please select Company and Designation,Επιλέξτε Εταιρεία και προσδιορισμό
 apps/erpnext/erpnext/config/settings.py,Human Resources,Ανθρώπινοι πόροι
 apps/erpnext/erpnext/setup/setup_wizard/operations/install_fixtures.py,Upper Income,Άνω εισοδήματος
 DocType: Item Manufacturer,Item Manufacturer,Είδους Κατασκευαστής
@@ -2897,7 +2897,7 @@ apps/erpnext/erpnext/accounts/doctype/chart_of_accounts_importer/chart_of_accoun
 apps/erpnext/erpnext/selling/doctype/sales_order/sales_order.py,"Material Request not created, as quantity for Raw Materials already available.","Το υλικό δεν ζητήθηκε, όπως είναι ήδη διαθέσιμη για τις πρώτες ύλες."
 DocType: BOM Item,BOM Item,Είδος Λ.Υ.
 DocType: Appraisal,For Employee,Για τον υπάλληλο
-DocType: Leave Control Panel,Designation (optional),Ονομασία (προαιρετικό)
+DocType: Leave Control Panel,Designation (optional),Προσδιορισμός (προαιρετικό)
 apps/erpnext/erpnext/stock/stock_ledger.py,"Valuation rate not found for the Item {0}, which is required to do accounting entries for {1} {2}. If the item is transacting as a zero valuation rate item in the {1}, please mention that in the {1} Item table. Otherwise, please create an incoming stock transaction for the item or mention valuation rate in the Item record, and then try submiting / cancelling this entry.","Ο συντελεστής αποτίμησης δεν βρέθηκε για το στοιχείο {0}, το οποίο απαιτείται για να κάνει καταχωρήσεις λογιστικής για {1} {2}. Εάν το στοιχείο πραγματοποιεί συναλλαγές ως στοιχείο μηδενικού επιτοκίου αποτίμησης στην {1}, παρακαλείσθε να αναφέρετε αυτό στον πίνακα {1} Στοιχείο. Διαφορετικά, δημιουργήστε μια εισερχόμενη συναλλαγή μετοχών για το στοιχείο ή αναφερθείτε στην τιμή αποτίμησης στην εγγραφή στοιχείων και, στη συνέχεια, δοκιμάστε να υποβάλετε / ακυρώσετε αυτήν την καταχώρηση."
 apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py,Row {0}: Advance against Supplier must be debit,Σειρά {0}: Προκαταβολή έναντι Προμηθευτής οφείλει να χρεώσει
 DocType: Company,Default Values,Προεπιλεγμένες Τιμές
@@ -7291,7 +7291,7 @@ DocType: Asset,Disposal Date,Ημερομηνία διάθεσης
 DocType: Service Level,Response and Resoution Time,Χρόνος απόκρισης και επαναφοράς
 DocType: Employee Leave Approver,Employee Leave Approver,Υπεύθυνος έγκρισης αδειών υπαλλήλου
 apps/erpnext/erpnext/stock/doctype/item/item.py,Row {0}: An Reorder entry already exists for this warehouse {1},Γραμμή {0}: μια καταχώρηση αναδιάταξης υπάρχει ήδη για αυτή την αποθήκη {1}
-apps/erpnext/erpnext/hr/doctype/staffing_plan/staffing_plan.js,Please enter the designation,Παρακαλώ εισάγετε την ονομασία
+apps/erpnext/erpnext/hr/doctype/staffing_plan/staffing_plan.js,Please enter the designation,Παρακαλώ εισάγετε τον προσδιορισμό
 apps/erpnext/erpnext/crm/doctype/opportunity/opportunity.py,"Cannot declare as lost, because Quotation has been made.","Δεν μπορεί να δηλώθει ως απολεσθέν, επειδή έχει γίνει προσφορά."
 apps/erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js,Get Outstanding Documents,Αποκτήστε εξαιρετικά έγγραφα
 apps/erpnext/erpnext/selling/doctype/sales_order/sales_order.js,Items for Raw Material Request,Στοιχεία για αιτήσεις πρώτων υλών
@@ -8193,30 +8193,30 @@ apps/erpnext/erpnext/patches/v11_0/add_default_dispatch_notification_template.py
 DocType: Program Enrollment,Check this if the Student is residing at the Institute's Hostel.,Ελέγξτε αν ο φοιτητής διαμένει στο Hostel του Ινστιτούτου.
 DocType: Course,Hero Image,Ήρωας Εικόνα
 apps/erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.py,Please enter Sales Orders in the above table,"Παρακαλούμε, εισάγετε Παραγγελίες στον παραπάνω πίνακα"
-,Stock Summary,Περίληψη Αποθεματικού
+,Stock Summary,Περίληψη Αποθεμάτων
 apps/erpnext/erpnext/config/assets.py,Transfer an asset from one warehouse to another,Μεταφορά ενός στοιχείου από μια αποθήκη σε άλλη
 DocType: Vehicle,Petrol,Βενζίνη
 DocType: Employee Benefit Application,Remaining Benefits (Yearly),Υπολειπόμενα οφέλη (Ετήσια)
-apps/erpnext/erpnext/stock/doctype/material_request/material_request.js,Bill of Materials,Bill Υλικών
+apps/erpnext/erpnext/stock/doctype/material_request/material_request.js,Bill of Materials,Κοστολόγιο υλικών
 DocType: Shift Type,The time after the shift start time when check-in is considered as late (in minutes).,"Ο χρόνος μετά την ώρα έναρξης της αλλαγής ταχυτήτων, όταν ο check-in θεωρείται καθυστερημένος (σε λεπτά)."
-apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py,Row {0}: Party Type and Party is required for Receivable / Payable account {1},Σειρά {0}: Τύπος Πάρτυ και το Κόμμα απαιτείται για εισπρακτέοι / πληρωτέοι λογαριασμό {1}
-DocType: Employee,Leave Policy,Αφήστε την πολιτική
-apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.js,Update Items,Ενημέρωση στοιχείων
-apps/erpnext/erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.py,Ref Date,Ημ. αναφοράς
+apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py,Row {0}: Party Type and Party is required for Receivable / Payable account {1},Σειρά {0}: Ο τύπος αντισυμβαλλόμενου και ο αντισυμβαλλόμενος απαιτούνται για εισπρακτέους ή πληρωτέους λογαριασμούς {1}
+DocType: Employee,Leave Policy,Πολιτική αδειών
+apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.js,Update Items,Ενημέρωση ειδών
+apps/erpnext/erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.py,Ref Date,Ημ/νία αναφοράς
 DocType: Employee,Reason for Leaving,Αιτιολογία αποχώρησης
 apps/erpnext/erpnext/public/js/call_popup/call_popup.js,View call log,Προβολή αρχείου κλήσεων
-DocType: BOM Operation,Operating Cost(Company Currency),Λειτουργικό κόστος (Εταιρεία νομίσματος)
-DocType: Loan Application,Rate of Interest,Βαθμός ενδιαφέροντος
-DocType: Expense Claim Detail,Sanctioned Amount,Ποσό κύρωσης
-DocType: Item,Shelf Life In Days,Διάρκεια Ζωής στις Ημέρες
-DocType: GL Entry,Is Opening,Είναι άνοιγμα
+DocType: BOM Operation,Operating Cost(Company Currency),Λειτουργικό κόστος (Σε νόμισμα εταιρείας)
+DocType: Loan Application,Rate of Interest,Ποσοστό τόκου
+DocType: Expense Claim Detail,Sanctioned Amount,Εγκεκριμένο ποσό
+DocType: Item,Shelf Life In Days,Διάρκεια Ζωής στο ράφι (Μέρες)
+DocType: GL Entry,Is Opening,Είναι κίνηση απογραφής
 apps/erpnext/erpnext/manufacturing/doctype/work_order/work_order.py,Unable to find the time slot in the next {0} days for the operation {1}.,Δεν είναι δυνατή η εύρεση της χρονικής υποδοχής στις επόμενες {0} ημέρες για τη λειτουργία {1}.
-DocType: Department,Expense Approvers,Έγκριση εξόδων
-apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py,Row {0}: Debit entry can not be linked with a {1},Γραμμή {0} : μια χρεωστική καταχώρηση δεν μπορεί να συνδεθεί με ένα {1}
-DocType: Journal Entry,Subscription Section,Τμήμα συνδρομής
+DocType: Department,Expense Approvers,Υπεύθυνοι έγκρισης εξόδων
+apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py,Row {0}: Debit entry can not be linked with a {1},Γραμμή {0} : Η χρεωστική εγγραφή δεν μπορεί να συνδεθεί με ένα {1}
+DocType: Journal Entry,Subscription Section,Τμήμα συνδρομών
 apps/erpnext/erpnext/controllers/buying_controller.py,{0} Asset{2} Created for <b>{1}</b>,{0} Asset {2} Δημιουργήθηκε για <b>{1}</b>
 apps/erpnext/erpnext/accounts/doctype/account/account.py,Account {0} does not exist,Ο λογαριασμός {0} δεν υπάρχει
 DocType: Training Event,Training Program,Εκπαιδευτικό Πρόγραμμα
 DocType: Account,Cash,Μετρητά
-DocType: Sales Invoice,Unpaid and Discounted,Μη πληρωθείσες και εκπτωτικές
-DocType: Employee,Short biography for website and other publications.,Σύντομη βιογραφία για την ιστοσελίδα και άλλες δημοσιεύσεις.
+DocType: Sales Invoice,Unpaid and Discounted,Απλήρωτα και Με έκπτωση
+DocType: Employee,Short biography for website and other publications.,Σύντομο βιογραφικό για την ιστοσελίδα και άλλες δημοσιεύσεις.

@@ -112,6 +112,7 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Supplier",
+					"label": _("Supplier_pno"),
 					"onboard": 1,
 					"description": _("Supplier database."),
 				},
