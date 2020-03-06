@@ -26,7 +26,7 @@ erpnext.payments = erpnext.stock.StockController.extend({
 	set_payment_primary_action: function(){
 		var me = this;
 	
-		this.dialog.set_primary_action(__("Submit"), function() {
+		this.dialog.set_primary_action(__("Submit_in_erp_payments"), function() {
 			// Allow no ZERO payment
 			$.each(me.frm.doc.payments, function (index, data) {
 				if (data.amount != 0) {

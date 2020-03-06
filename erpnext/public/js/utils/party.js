@@ -256,7 +256,7 @@ erpnext.utils.validate_mandatory = function(frm, label, value, trigger_on) {
 	if(!value) {
 		frm.doc[trigger_on] = "";
 		refresh_field(trigger_on);
-		frappe.msgprint(__("Please enter {0} first", [label]));
+		frappe.msgprint(__("Please enter {0} first_in_erp_u_party", [label]));
 		return false;
 	}
 	return true;
@@ -282,6 +282,6 @@ erpnext.utils.get_shipping_address = function(frm, callback){
 			}
 		});
 	} else {
-		frappe.msgprint(__("Select company first"));
+		frappe.msgprint(__("Select company first_in_erp_u_party"));
 	}
 }

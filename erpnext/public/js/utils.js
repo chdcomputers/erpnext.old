@@ -53,7 +53,7 @@ $.extend(erpnext, {
 		if(!grid_row || !grid_row.grid_form.fields_dict.serial_no ||
 			grid_row.grid_form.fields_dict.serial_no.get_status()!=="Write") return;
 
-		var $btn = $('<button class="btn btn-sm btn-default">'+__("Add Serial No")+'</button>')
+		var $btn = $('<button class="btn btn-sm btn-default">'+__("Add Serial No_in_erp_utils")+'</button>')
 			.appendTo($("<div>")
 				.css({"margin-bottom": "10px", "margin-top": "10px"})
 				.appendTo(grid_row.grid_form.fields_dict.serial_no.$wrapper));
@@ -102,14 +102,14 @@ $.extend(erpnext.utils, {
 					erpnext.utils.add_indicator_for_multicompany(frm, info);
 				});
 			} else if (company_wise_info.length === 1) {
-				frm.dashboard.add_indicator(__('Annual Billing: {0}',
+				frm.dashboard.add_indicator(__('Annual Billing: {0}_in_erp_utils',
 					[format_currency(company_wise_info[0].billing_this_year, company_wise_info[0].currency)]), 'blue');
-				frm.dashboard.add_indicator(__('Total Unpaid: {0}',
+				frm.dashboard.add_indicator(__('Total Unpaid: {0}_in_erp_utils',
 					[format_currency(company_wise_info[0].total_unpaid, company_wise_info[0].currency)]),
 				company_wise_info[0].total_unpaid ? 'orange' : 'green');
 
 				if(company_wise_info[0].loyalty_points) {
-					frm.dashboard.add_indicator(__('Loyalty Points: {0}',
+					frm.dashboard.add_indicator(__('Loyalty Points: {0}_in_erp_utils',
 						[company_wise_info[0].loyalty_points]), 'blue');
 				}
 			}
@@ -300,7 +300,7 @@ erpnext.utils.select_alternate_items = function(opts) {
 	const dialog = new frappe.ui.Dialog({
 		title: __("Select Alternate Item"),
 		fields: [
-			{fieldtype:'Section Break', label: __('Items')},
+			{fieldtype:'Section Break', label: __('Items_in_erp_utils')},
 			{
 				fieldname: "alternative_items", fieldtype: "Table", cannot_add_rows: true,
 				in_place_edit: true, data: this.data,
@@ -317,14 +317,14 @@ erpnext.utils.select_alternate_items = function(opts) {
 					options: 'Item',
 					in_list_view: 1,
 					read_only: 1,
-					label: __('Item Code')
+					label: __('Item Code_in_erp_utils')
 				}, {
 					fieldtype:'Link',
 					fieldname:"alternate_item",
 					options: 'Item',
 					default: "",
 					in_list_view: 1,
-					label: __('Alternate Item'),
+					label: __('Alternate Item_in_erp_utils'),
 					onchange: function() {
 						const item_code = this.get_value();
 						const warehouse = this.grid_row.on_grid_fields_dict.warehouse.get_value();
@@ -356,7 +356,7 @@ erpnext.utils.select_alternate_items = function(opts) {
 					options: 'Warehouse',
 					default: "",
 					in_list_view: 1,
-					label: __('Warehouse'),
+					label: __('Warehouse_in_erp_utils'),
 					onchange: function() {
 						const warehouse = this.get_value();
 						const item_code = this.grid_row.on_grid_fields_dict.item_code.get_value();
@@ -380,7 +380,7 @@ erpnext.utils.select_alternate_items = function(opts) {
 					default: 0,
 					read_only: 1,
 					in_list_view: 1,
-					label: __('Available Qty')
+					label: __('Available Qty_in_erp_utils')
 				}]
 			},
 		],
@@ -412,7 +412,7 @@ erpnext.utils.select_alternate_items = function(opts) {
 			refresh_field(opts.child_docname);
 			this.hide();
 		},
-		primary_action_label: __('Update')
+		primary_action_label: __('Update_in_erp_utils')
 	});
 
 	frm.doc[opts.child_docname].forEach(d => {
@@ -437,9 +437,9 @@ erpnext.utils.update_child_items = function(opts) {
 	const child_docname = (typeof opts.cannot_add_row === 'undefined') ? "items" : opts.child_docname;
 	this.data = [];
 	const dialog = new frappe.ui.Dialog({
-		title: __("Update Items"),
+		title: __("Update Items_in_erp_utils"),
 		fields: [
-			{fieldtype:'Section Break', label: __('Items')},
+			{fieldtype:'Section Break', label: __('Items_in_erp_utils')},
 			{
 				fieldname: "trans_items",
 				fieldtype: "Table",
@@ -460,21 +460,21 @@ erpnext.utils.update_child_items = function(opts) {
 					in_list_view: 1,
 					read_only: 0,
 					disabled: 0,
-					label: __('Item Code')
+					label: __('Item Code_in_erp_utils')
 				}, {
 					fieldtype:'Float',
 					fieldname:"qty",
 					default: 0,
 					read_only: 0,
 					in_list_view: 1,
-					label: __('Qty')
+					label: __('Qty_in_erp_utils')
 				}, {
 					fieldtype:'Currency',
 					fieldname:"rate",
 					default: 0,
 					read_only: 0,
 					in_list_view: 1,
-					label: __('Rate')
+					label: __('Rate_in_erp_utils')
 				}]
 			},
 		],
@@ -496,7 +496,7 @@ erpnext.utils.update_child_items = function(opts) {
 			this.hide();
 			refresh_field("items");
 		},
-		primary_action_label: __('Update')
+		primary_action_label: __('Update_in_erp_utils')
 	});
 
 	frm.doc[opts.child_docname].forEach(d => {
@@ -564,7 +564,7 @@ erpnext.utils.map_current_doc = function(opts) {
 					})
 
 					if(already_set) {
-						frappe.msgprint(__("You have already selected items from {0} {1}",
+						frappe.msgprint(__("You have already selected items from {0} {1}_in_erp_utils",
 							[opts.source_doctype, src]));
 						return;
 					}
@@ -603,7 +603,7 @@ erpnext.utils.map_current_doc = function(opts) {
 			action: function(selections, args) {
 				let values = selections;
 				if(values.length === 0){
-					frappe.msgprint(__("Please select {0}", [opts.source_doctype]))
+					frappe.msgprint(__("Please select {0}_in_erp_utils", [opts.source_doctype]))
 					return;
 				}
 				opts.source_name = values;

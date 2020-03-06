@@ -11,7 +11,7 @@ frappe.ui.form.ItemQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 		this._super();
 		this.init_post_render_dialog_operations();
 		this.preset_fields_for_template();
-		this.dialog.$wrapper.find('.edit-full').text(__('Edit in full page for more options like assets, serial nos, batches etc.'))
+		this.dialog.$wrapper.find('.edit-full').text(__('Edit in full page for more options like assets, serial nos, batches etc._in_erp_u_item_quick_entry'))
 	},
 
 	init_post_render_dialog_operations: function() {
@@ -26,7 +26,7 @@ frappe.ui.form.ItemQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 
 	register_primary_action: function() {
 		var me = this;
-		this.dialog.set_primary_action(__('Save'), function() {
+		this.dialog.set_primary_action(__('Save_in_erp_u_item_quick_entry'), function() {
 			if (me.dialog.working) return;
 
 			var data = me.dialog.get_values();
@@ -105,11 +105,11 @@ frappe.ui.form.ItemQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 		var variant_fields = [{
 			fieldname: "create_variant",
 			fieldtype: "Check",
-			label: __("Create Variant")
+			label: __("Create Variant_in_erp_u_item_quick_entry")
 		},
 		{
 			fieldname: 'item_template',
-			label: __('Item Template'),
+			label: __('Item Template_in_erp_u_item_quick_entry'),
 			reqd: 0,
 			fieldtype: 'Link',
 			options: "Item",
@@ -355,7 +355,7 @@ frappe.ui.form.ItemQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 					if (Object.prototype.toString.call(r.message) == "[object Object]") {
 						variant_doc = r.message;
 					} else {
-						var msgprint_dialog = frappe.msgprint(__("Item Variant {0} already exists with same attributes", [repl('<a class="strong variant-click" data-item-code="%(item)s" \
+						var msgprint_dialog = frappe.msgprint(__("Item Variant {0} already exists with same attributes_in_erp_u_item_quick_entry", [repl('<a class="strong variant-click" data-item-code="%(item)s" \
 								>%(item)s</a>', {
 								item: r.message
 							})]));

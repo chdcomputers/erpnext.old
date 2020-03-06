@@ -5,7 +5,7 @@
 erpnext.StockAnalytics = erpnext.StockGridReport.extend({
 	init: function(wrapper, opts) {
 		var args = {
-			title: __("Stock Analytics"),
+			title: __("Stock Analytics_in_erp_stock_analytics"),
 			parent: $(wrapper).find('.layout-main'),
 			page: wrapper.page,
 			doctypes: ["Item", "Item Group", "Warehouse", "Stock Ledger Entry", "Brand",
@@ -34,10 +34,10 @@ erpnext.StockAnalytics = erpnext.StockGridReport.extend({
 	},
 	setup_columns: function() {
 		var std_columns = [
-			{id: "name", name: __("Item"), field: "name", width: 300},
-			{id: "brand", name: __("Brand"), field: "brand", width: 100},
-			{id: "stock_uom", name: __("UOM"), field: "stock_uom", width: 100},
-			{id: "opening", name: __("Opening"), field: "opening", hidden: true,
+			{id: "name", name: __("Item_in_erp_stock_analytics"), field: "name", width: 300},
+			{id: "brand", name: __("Brand_in_erp_stock_analytics"), field: "brand", width: 100},
+			{id: "stock_uom", name: __("UOM_in_erp_stock_analytics"), field: "stock_uom", width: 100},
+			{id: "opening", name: __("Opening_in_erp_stock_analytics"), field: "opening", hidden: true,
 				formatter: this.currency_formatter}
 		];
 
@@ -45,26 +45,26 @@ erpnext.StockAnalytics = erpnext.StockGridReport.extend({
 		this.columns = std_columns.concat(this.columns);
 	},
 	filters: [
-		{fieldtype:"Select", label: __("Value or Qty"), fieldname: "value_or_qty",
-			options:[{label:__("Value"), value:"Value"}, {label:__("Quantity"), value:"Quantity"}],
+		{fieldtype:"Select", label: __("Value or Qty_in_erp_stock_analytics"), fieldname: "value_or_qty",
+			options:[{label:__("Value_in_erp_stock_analytics"), value:"Value"}, {label:__("Quantity_in_erp_stock_analytics"), value:"Quantity"}],
 			filter: function(val, item, opts, me) {
 				return me.apply_zero_filter(val, item, opts, me);
 			}},
-		{fieldtype:"Select", label: __("Brand"), link:"Brand", fieldname: "brand",
-			default_value: __("Select Brand..."), filter: function(val, item, opts) {
+		{fieldtype:"Select", label: __("Brand_in_erp_stock_analytics"), link:"Brand", fieldname: "brand",
+			default_value: __("Select Brand..._in_erp_stock_analytics"), filter: function(val, item, opts) {
 				return val == opts.default_value || item.brand == val || item._show;
 			}, link_formatter: {filter_input: "brand"}},
-		{fieldtype:"Select", label: __("Warehouse"), link:"Warehouse", fieldname: "warehouse",
-			default_value: __("Select Warehouse...")},
-		{fieldtype:"Date", label: __("From Date"), fieldname: "from_date"},
-		{fieldtype:"Date", label: __("To Date"), fieldname: "to_date"},
-		{fieldtype:"Select", label: __("Range"), fieldname: "range",
+		{fieldtype:"Select", label: __("Warehouse_in_erp_stock_analytics"), link:"Warehouse", fieldname: "warehouse",
+			default_value: __("Select Warehouse..._in_erp_stock_analytics")},
+		{fieldtype:"Date", label: __("From Date_in_erp_stock_analytics"), fieldname: "from_date"},
+		{fieldtype:"Date", label: __("To Date_in_erp_stock_analytics"), fieldname: "to_date"},
+		{fieldtype:"Select", label: __("Range_in_erp_stock_analytics"), fieldname: "range",
 			options:[
-				{label:__("Daily"), value:"Daily"},
-				{label:__("Weekly"), value:"Weekly"},
-				{label:__("Monthly"), value:"Monthly"},
-				{label:__("Quarterly"), value:"Quarterly"},
-				{label:__("Yearly"), value:"Yearly"},
+				{label:__("Daily_in_erp_stock_analytics"), value:"Daily"},
+				{label:__("Weekly_in_erp_stock_analytics"), value:"Weekly"},
+				{label:__("Monthly_in_erp_stock_analytics"), value:"Monthly"},
+				{label:__("Quarterly_in_erp_stock_analytics"), value:"Quarterly"},
+				{label:__("Yearly_in_erp_stock_analytics"), value:"Yearly"},
 			]}
 	],
 	setup_filters: function() {

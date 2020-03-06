@@ -5,7 +5,7 @@ erpnext.get_purchase_trends_filters = function() {
 	return [
 		{
 			"fieldname":"company",
-			"label": __("Company"),
+			"label": __("Company_in_erp_pur_trends_filters"),
 			"fieldtype": "Link",
 			"options": "Company",
 			"reqd": 1,
@@ -13,19 +13,19 @@ erpnext.get_purchase_trends_filters = function() {
 		},
 		{
 			"fieldname":"period",
-			"label": __("Period"),
+			"label": __("Period_in_erp_pur_trends_filters"),
 			"fieldtype": "Select",
 			"options": [
-				{ "value": "Monthly", "label": __("Monthly") },
-				{ "value": "Quarterly", "label": __("Quarterly") },
-				{ "value": "Half-Yearly", "label": __("Half-Yearly") },
-				{ "value": "Yearly", "label": __("Yearly") }
+				{ "value": "Monthly", "label": __("Monthly_in_erp_pur_trends_filters") },
+				{ "value": "Quarterly", "label": __("Quarterly_in_erp_pur_trends_filters") },
+				{ "value": "Half-Yearly", "label": __("Half-Yearly_in_erp_pur_trends_filters") },
+				{ "value": "Yearly", "label": __("Yearly_in_erp_pur_trends_filters") }
 			],
 			"default": "Monthly"
 		},
 		{
 			"fieldname":"fiscal_year",
-			"label": __("Fiscal Year"),
+			"label": __("Fiscal Year_in_erp_pur_trends_filters"),
 			"fieldtype": "Link",
 			"options":'Fiscal Year',
 			"default": frappe.sys_defaults.fiscal_year
@@ -42,25 +42,25 @@ erpnext.get_purchase_trends_filters = function() {
 		},
 		{
 			"fieldname":"based_on",
-			"label": __("Based On"),
+			"label": __("Based On_in_erp_pur_trends_filters"),
 			"fieldtype": "Select",
 			"options": [
-				{ "value": "Item", "label": __("Item") },
-				{ "value": "Item Group", "label": __("Item Group") },
-				{ "value": "Supplier", "label": __("Supplier") },
-				{ "value": "Supplier Group", "label": __("Supplier Group") },
-				{ "value": "Project", "label": __("Project") }
+				{ "value": "Item", "label": __("Item_in_erp_pur_trends_filters") },
+				{ "value": "Item Group", "label": __("Item Group_in_erp_pur_trends_filters") },
+				{ "value": "Supplier", "label": __("Supplier_in_erp_pur_trends_filters") },
+				{ "value": "Supplier Group", "label": __("Supplier Group_in_erp_pur_trends_filters") },
+				{ "value": "Project", "label": __("Project_in_erp_pur_trends_filters") }
 			],
 			"default": "Item"
 		},
 		{
 			"fieldname":"group_by",
-			"label": __("Group By"),
+			"label": __("Group By_in_erp_pur_trends_filters"),
 			"fieldtype": "Select",
 			"options": [
 				"",
-				{ "value": "Item", "label": __("Item") },
-				{ "value": "Supplier", "label": __("Supplier") }
+				{ "value": "Item", "label": __("Item_in_erp_pur_trends_filters") },
+				{ "value": "Supplier", "label": __("Supplier_in_erp_pur_trends_filters") }
 			],
 			"default": ""
 		},

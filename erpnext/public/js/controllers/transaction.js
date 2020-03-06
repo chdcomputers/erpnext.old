@@ -70,7 +70,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 
 		frappe.ui.form.on(this.frm.doctype, "additional_discount_percentage", function(frm) {
 			if(!frm.doc.apply_discount_on) {
-				frappe.msgprint(__("Please set 'Apply Additional Discount On'"));
+				frappe.msgprint(__("Please set 'Apply Additional Discount On'_in_erp_transaction"));
 				return;
 			}
 
@@ -308,9 +308,9 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 
 		let show_description = function(idx, exist = null) {
 			if (exist) {
-				scan_barcode_field.set_new_description(__('Row #{0}: Qty increased by 1', [idx]));
+				scan_barcode_field.set_new_description(__('Row #{0}: Qty increased by 1_in_erp_transaction', [idx]));
 			} else {
-				scan_barcode_field.set_new_description(__('Row #{0}: Item added', [idx]));
+				scan_barcode_field.set_new_description(__('Row #{0}: Item added_in_erp_transaction', [idx]));
 			}
 		}
 
@@ -321,7 +321,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 			}).then(r => {
 				const data = r && r.message;
 				if (!data || Object.keys(data).length === 0) {
-					scan_barcode_field.set_new_description(__('Cannot find Item with this barcode'));
+					scan_barcode_field.set_new_description(__('Cannot find Item with this barcode_in_erp_transaction'));
 					return;
 				}
 
@@ -408,7 +408,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		let blacklist = ['Purchase Invoice', 'BOM'];
 		if(this.frm.doc.docstatus===1 && !in_list(["Lost", "Stopped", "Closed"], this.frm.doc.status)
 			&& !blacklist.includes(this.frm.doctype)) {
-			this.frm.page.add_menu_item(__('Send SMS'), function() { me.send_sms(); });
+			this.frm.page.add_menu_item(__('Send SMS_in_erp_transaction'), function() { me.send_sms(); });
 		}
 	},
 
@@ -982,10 +982,10 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 
 			if(stop_date < start_date) {
 				frappe.model.set_value(cdt, cdn, "service_stop_date", "");
-				frappe.throw(__("Service Stop Date cannot be before Service Start Date"));
+				frappe.throw(__("Service Stop Date cannot be before Service Start Date_in_erp_transaction"));
 			} else if (stop_date > end_date) {
 				frappe.model.set_value(cdt, cdn, "service_stop_date", "");
-				frappe.throw(__("Service Stop Date cannot be after Service End Date"));
+				frappe.throw(__("Service Stop Date cannot be after Service End Date_in_erp_transaction"));
 			}
 		}
 	},
@@ -1448,9 +1448,9 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		$.each(["company", "customer"], function(i, fieldname) {
 			if(frappe.meta.has_field(me.frm.doc.doctype, fieldname) && me.frm.doc.doctype != "Purchase Order") {
 				if (!me.frm.doc[fieldname]) {
-					frappe.msgprint(__("Please specify") + ": " +
+					frappe.msgprint(__("Please specify_in_erp_transaction") + ": " +
 						frappe.meta.get_label(me.frm.doc.doctype, fieldname, me.frm.doc.name) +
-						". " + __("It is needed to fetch Item Details."));
+						". " + __("It is needed to fetch Item Details._in_erp_transaction"));
 					valid = false;
 				}
 			}
@@ -1573,7 +1573,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 	is_recurring: function() {
 		// set default values for recurring documents
 		if(this.frm.doc.is_recurring && this.frm.doc.__islocal) {
-			frappe.msgprint(__("Please set recurring after saving"));
+			frappe.msgprint(__("Please set recurring after saving_in_erp_transaction"));
 			this.frm.set_value('is_recurring', 0);
 			return;
 		}
@@ -1674,7 +1674,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		var item = frappe.get_doc(cdt, cdn);
 
 		if(!item.item_code) {
-			frappe.throw(__("Please enter Item Code to get batch no"));
+			frappe.throw(__("Please enter Item Code to get batch no_in_erp_transaction"));
 		} else if (doc.doctype == "Purchase Receipt" ||
 			(doc.doctype == "Purchase Invoice" && doc.update_stock)) {
 
@@ -1704,7 +1704,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 
 		var item = frappe.get_doc(cdt, cdn);
 		if(!item.item_code) {
-			frappe.throw(__("Please enter Item Code to get item taxes"));
+			frappe.throw(__("Please enter Item Code to get item taxes_in_erp_transaction"));
 		} else {
 
 			let filters = {
@@ -1793,7 +1793,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 				},
 				callback: function(r) {
 					if (!r.message) {
-						frappe.throw(__("Invalid Blanket Order for the selected Customer and Item"));
+						frappe.throw(__("Invalid Blanket Order for the selected Customer and Item_in_erp_transaction"));
 					} else {
 						frappe.run_serially([
 							() => frappe.model.set_value(cdt, cdn, "blanket_order_rate", r.message.blanket_order_rate),

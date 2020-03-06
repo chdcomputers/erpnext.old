@@ -222,7 +222,7 @@ erpnext.buying.BuyingController = erpnext.TransactionController.extend({
 		var is_negative_qty = false;
 		for(var i = 0; i<fieldnames.length; i++) {
 			if(item[fieldnames[i]] < 0){
-				frappe.msgprint(__("Row #{0}: {1} can not be negative for item {2}",
+				frappe.msgprint(__("Row #{0}: {1} can not be negative for item {2}_in_erp_buying",
 					[item.idx,__(frappe.meta.get_label(cdt, fieldnames[i], cdn)), item.item_code]));
 				is_negative_qty = true;
 				break;
@@ -271,9 +271,9 @@ erpnext.buying.BuyingController = erpnext.TransactionController.extend({
 
 	set_from_product_bundle: function() {
 		var me = this;
-		this.frm.add_custom_button(__("Product Bundle"), function() {
+		this.frm.add_custom_button(__("Product Bundle_in_erp_buying"), function() {
 			erpnext.buying.get_items_from_product_bundle(me.frm);
-		}, __("Get items from"));
+		}, __("Get items from_in_erp_buying"));
 	},
 
 	shipping_address: function(){
@@ -300,7 +300,7 @@ erpnext.buying.BuyingController = erpnext.TransactionController.extend({
 			},
 			callback: function(r) {
 				if(!r.message || r.message.length == 0) {
-					frappe.throw(__("No pending Material Requests found to link for the given items."))
+					frappe.throw(__("No pending Material Requests found to link for the given items._in_erp_buying"))
 				}
 				else {
 					var i = 0;
@@ -359,9 +359,9 @@ erpnext.buying.BuyingController = erpnext.TransactionController.extend({
 				},
 				callback: function(r){
 					if (r.message=="success") {
-						frappe.show_alert({message:__("Auto repeat document updated"), indicator:'green'});
+						frappe.show_alert({message:__("Auto repeat document updated_in_erp_buying"), indicator:'green'});
 					} else {
-						frappe.show_alert({message:__("An error occurred during the update process"), indicator:'red'});
+						frappe.show_alert({message:__("An error occurred during the update process_in_erp_buying"), indicator:'red'});
 					}
 				}
 			})
@@ -411,25 +411,25 @@ erpnext.buying.get_default_bom = function(frm) {
 
 erpnext.buying.get_items_from_product_bundle = function(frm) {
 	var dialog = new frappe.ui.Dialog({
-		title: __("Get Items from Product Bundle"),
+		title: __("Get Items from Product Bundle_in_erp_buying"),
 		fields: [
 			{
 				"fieldtype": "Link",
-				"label": __("Product Bundle"),
+				"label": __("Product Bundle_in_erp_buying"),
 				"fieldname": "product_bundle",
 				"options":"Product Bundle",
 				"reqd": 1
 			},
 			{
 				"fieldtype": "Currency",
-				"label": __("Quantity"),
+				"label": __("Quantity_in_erp_buying"),
 				"fieldname": "quantity",
 				"reqd": 1,
 				"default": 1
 			},
 			{
 				"fieldtype": "Button",
-				"label": __("Get Items"),
+				"label": __("Get Items_in_erp_buying"),
 				"fieldname": "get_items",
 				"cssClass": "btn-primary"
 			}

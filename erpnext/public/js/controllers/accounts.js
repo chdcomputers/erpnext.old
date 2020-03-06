@@ -120,7 +120,7 @@ frappe.ui.form.on('Salary Structure', {
 
 var get_payment_mode_account = function(frm, mode_of_payment, callback) {
 	if(!frm.doc.company) {
-		frappe.throw(__("Please select the Company first"));
+		frappe.throw(__("Please select the Company first_in_erp_accounts"));
 	}
 
 	if(!mode_of_payment) {
@@ -144,7 +144,7 @@ var get_payment_mode_account = function(frm, mode_of_payment, callback) {
 cur_frm.cscript.account_head = function(doc, cdt, cdn) {
 	var d = locals[cdt][cdn];
 	if(!d.charge_type && d.account_head){
-		frappe.msgprint(__("Please select Charge Type first"));
+		frappe.msgprint(__("Please select Charge Type first_in_erp_accounts"));
 		frappe.model.set_value(cdt, cdn, "account_head", "");
 	} else if(d.account_head && d.charge_type!=="Actual") {
 		frappe.call({
@@ -171,21 +171,21 @@ cur_frm.cscript.validate_taxes_and_charges = function(cdt, cdn) {
 	}
 
 	if(!d.charge_type && (d.row_id || d.rate || d.tax_amount)) {
-		msg = __("Please select Charge Type first");
+		msg = __("Please select Charge Type first_in_erp_accounts");
 		d.row_id = "";
 		d.rate = d.tax_amount = 0.0;
 	} else if((d.charge_type == 'Actual' || d.charge_type == 'On Net Total') && d.row_id) {
-		msg = __("Can refer row only if the charge type is 'On Previous Row Amount' or 'Previous Row Total'");
+		msg = __("Can refer row only if the charge type is 'On Previous Row Amount' or 'Previous Row Total'_in_erp_accounts");
 		d.row_id = "";
 	} else if((d.charge_type == 'On Previous Row Amount' || d.charge_type == 'On Previous Row Total') && d.row_id) {
 		if (d.idx == 1) {
-			msg = __("Cannot select charge type as 'On Previous Row Amount' or 'On Previous Row Total' for first row");
+			msg = __("Cannot select charge type as 'On Previous Row Amount' or 'On Previous Row Total' for first row_in_erp_accounts");
 			d.charge_type = '';
 		} else if (!d.row_id) {
-			msg = __("Please specify a valid Row ID for row {0} in table {1}", [d.idx, __(d.doctype)]);
+			msg = __("Please specify a valid Row ID for row {0} in table {1}_in_erp_accounts", [d.idx, __(d.doctype)]);
 			d.row_id = "";
 		} else if(d.row_id && d.row_id >= d.idx) {
-			msg = __("Cannot refer row number greater than or equal to current row number for this Charge type");
+			msg = __("Cannot refer row number greater than or equal to current row number for this Charge type_in_erp_accounts");
 			d.row_id = "";
 		}
 	}
@@ -204,7 +204,7 @@ cur_frm.cscript.validate_inclusive_tax = function(tax) {
 	};
 
 	var on_previous_row_error = function(row_range) {
-		var msg = __("For row {0} in {1}. To include {2} in Item rate, rows {3} must also be included",
+		var msg = __("For row {0} in {1}. To include {2} in Item rate, rows {3} must also be included_in_erp_accounts",
 			[tax.idx, __(tax.doctype), tax.charge_type, row_range])
 		frappe.throw(msg);
 	};
@@ -226,7 +226,7 @@ cur_frm.cscript.validate_inclusive_tax = function(tax) {
 				on_previous_row_error(tax.row_id == 1 ? "1" : "1 - " + tax.row_id);
 			}
 		} else if(tax.category == "Valuation") {
-			frappe.throw(__("Valuation type charges can not marked as Inclusive"));
+			frappe.throw(__("Valuation type charges can not marked as Inclusive_in_erp_accounts"));
 		}
 	}
 }

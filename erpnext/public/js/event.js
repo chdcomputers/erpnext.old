@@ -12,24 +12,24 @@ frappe.ui.form.on("Event", {
 			};
 		});
 
-		frm.add_custom_button(__('Add Leads'), function() {
+		frm.add_custom_button(__('Add Leads_in_erp_event'), function() {
 			new frappe.desk.eventParticipants(frm, "Lead");
-		}, __("Add Participants"));
+		}, __("Add Participants_in_erp_event"));
 
-		frm.add_custom_button(__('Add Customers'), function() {
+		frm.add_custom_button(__('Add Customers_in_erp_event'), function() {
 			new frappe.desk.eventParticipants(frm, "Customer");
-		}, __("Add Participants"));
+		}, __("Add Participants_in_erp_event"));
 
-		frm.add_custom_button(__('Add Suppliers'), function() {
+		frm.add_custom_button(__('Add Suppliers_in_erp_event'), function() {
 			new frappe.desk.eventParticipants(frm, "Supplier");
-		}, __("Add Participants"));
+		}, __("Add Participants_in_erp_event"));
 
-		frm.add_custom_button(__('Add Employees'), function() {
+		frm.add_custom_button(__('Add Employees_in_erp_event'), function() {
 			new frappe.desk.eventParticipants(frm, "Employee");
 		}, __("Add Participants"));
 
 		frm.add_custom_button(__('Add Sales Partners'), function() {
 			new frappe.desk.eventParticipants(frm, "Sales Partners");
-		}, __("Add Participants"));
+		}, __("Add Participants_in_erp_event"));
 	}
 });

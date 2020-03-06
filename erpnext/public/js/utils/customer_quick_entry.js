@@ -14,11 +14,11 @@ frappe.ui.form.CustomerQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 	get_variant_fields: function() {
 		var variant_fields = [{
 			fieldtype: "Section Break",
-			label: __("Primary Contact Details"),
+			label: __("Primary Contact Details_in_erp_u_customer_quick_entry"),
 			collapsible: 1
 		},
 		{
-			label: __("Email Id"),
+			label: __("Email Id_in_erp_u_customer_quick_entry"),
 			fieldname: "email_id",
 			fieldtype: "Data"
 		},
@@ -26,27 +26,27 @@ frappe.ui.form.CustomerQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 			fieldtype: "Column Break"
 		},
 		{
-			label: __("Mobile Number"),
+			label: __("Mobile Number_in_erp_u_customer_quick_entry"),
 			fieldname: "mobile_no",
 			fieldtype: "Data"
 		},
 		{
 			fieldtype: "Section Break",
-			label: __("Primary Address Details"),
+			label: __("Primary Address Details_in_erp_u_customer_quick_entry"),
 			collapsible: 1
 		},
 		{
-			label: __("Address Line 1"),
+			label: __("Address Line 1_in_erp_u_customer_quick_entry"),
 			fieldname: "address_line1",
 			fieldtype: "Data"
 		},
 		{
-			label: __("Address Line 2"),
+			label: __("Address Line 2_in_erp_u_customer_quick_entry"),
 			fieldname: "address_line2",
 			fieldtype: "Data"
 		},
 		{
-			label: __("ZIP Code"),
+			label: __("ZIP Code_in_erp_u_customer_quick_entry"),
 			fieldname: "pincode",
 			fieldtype: "Data"
 		},
@@ -54,23 +54,23 @@ frappe.ui.form.CustomerQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 			fieldtype: "Column Break"
 		},
 		{
-			label: __("City"),
+			label: __("City_in_erp_u_customer_quick_entry"),
 			fieldname: "city",
 			fieldtype: "Data"
 		},
 		{
-			label: __("State"),
+			label: __("State_in_erp_u_customer_quick_entry"),
 			fieldname: "state",
 			fieldtype: "Data"
 		},
 		{
-			label: __("Country"),
+			label: __("Country_in_erp_u_customer_quick_entry"),
 			fieldname: "country",
 			fieldtype: "Link",
 			options: "Country"
 		},
 		{
-			label: __("Customer POS Id"),
+			label: __("Customer POS Id_in_erp_u_customer_quick_entry"),
 			fieldname: "customer_pos_id",
 			fieldtype: "Data",
 			hidden: 1

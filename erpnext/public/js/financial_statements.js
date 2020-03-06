@@ -47,18 +47,18 @@ erpnext.financial_statements = {
 		// dropdown for links to other financial statements
 		erpnext.financial_statements.filters = get_filters()
 
-		report.page.add_inner_button(__("Balance Sheet"), function() {
+		report.page.add_inner_button(__("Balance Sheet_in_erp_fin_statements"), function() {
 			var filters = report.get_values();
 			frappe.set_route('query-report', 'Balance Sheet', {company: filters.company});
-		}, __('Financial Statements'));
-		report.page.add_inner_button(__("Profit and Loss"), function() {
+		}, __('Financial Statements_in_erp_fin_statements'));
+		report.page.add_inner_button(__("Profit and Loss_in_erp_fin_statements"), function() {
 			var filters = report.get_values();
 			frappe.set_route('query-report', 'Profit and Loss Statement', {company: filters.company});
-		}, __('Financial Statements'));
-		report.page.add_inner_button(__("Cash Flow Statement"), function() {
+		}, __('Financial Statements_in_erp_fin_statements'));
+		report.page.add_inner_button(__("Cash Flow Statement_in_erp_fin_statements"), function() {
 			var filters = report.get_values();
 			frappe.set_route('query-report', 'Cash Flow', {company: filters.company});
-		}, __('Financial Statements'));
+		}, __('Financial Statements_in_erp_fin_statements'));
 	}
 };
 
@@ -66,7 +66,7 @@ function get_filters(){
 	let filters = [
 		{
 			"fieldname":"company",
-			"label": __("Company"),
+			"label": __("Company_in_erp_fin_statements"),
 			"fieldtype": "Link",
 			"options": "Company",
 			"default": frappe.defaults.get_user_default("Company"),
@@ -74,13 +74,13 @@ function get_filters(){
 		},
 		{
 			"fieldname":"finance_book",
-			"label": __("Finance Book"),
+			"label": __("Finance Book_in_erp_fin_statements"),
 			"fieldtype": "Link",
 			"options": "Finance Book"
 		},
 		{
 			"fieldname":"from_fiscal_year",
-			"label": __("Start Year"),
+			"label": __("Start Year_in_erp_fin_statements"),
 			"fieldtype": "Link",
 			"options": "Fiscal Year",
 			"default": frappe.defaults.get_user_default("fiscal_year"),
@@ -96,13 +96,13 @@ function get_filters(){
 		},
 		{
 			"fieldname": "periodicity",
-			"label": __("Periodicity"),
+			"label": __("Periodicity_in_erp_fin_statements"),
 			"fieldtype": "Select",
 			"options": [
-				{ "value": "Monthly", "label": __("Monthly") },
-				{ "value": "Quarterly", "label": __("Quarterly") },
-				{ "value": "Half-Yearly", "label": __("Half-Yearly") },
-				{ "value": "Yearly", "label": __("Yearly") }
+				{ "value": "Monthly", "label": __("Monthly_in_erp_fin_statements") },
+				{ "value": "Quarterly", "label": __("Quarterly_in_erp_fin_statements") },
+				{ "value": "Half-Yearly", "label": __("Half-Yearly_in_erp_fin_statements") },
+				{ "value": "Yearly", "label": __("Yearly_in_erp_fin_statements") }
 			],
 			"default": "Yearly",
 			"reqd": 1
@@ -113,13 +113,13 @@ function get_filters(){
 		// accordingly.
 		{
 			"fieldname": "presentation_currency",
-			"label": __("Currency"),
+			"label": __("Currency_in_erp_fin_statements"),
 			"fieldtype": "Select",
 			"options": erpnext.get_presentation_currency_list()
 		},
 		{
 			"fieldname": "cost_center",
-			"label": __("Cost Center"),
+			"label": __("Cost Center_in_erp_fin_statements"),
 			"fieldtype": "MultiSelectList",
 			get_data: function(txt) {
 				return frappe.db.get_link_options('Cost Center', txt, {

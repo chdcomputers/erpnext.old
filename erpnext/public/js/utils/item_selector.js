@@ -17,7 +17,7 @@ erpnext.ItemSelector = Class.extend({
 	setup: function() {
 		var me = this;
 		if(!this.grid.add_items_button) {
-			this.grid.add_items_button = this.grid.add_custom_button(__('Add Items'), function() {
+			this.grid.add_items_button = this.grid.add_custom_button(__('Add Items_in_erp_u_item_selector'), function() {
 				if(!me.dialog) {
 					me.make_dialog();
 				}
@@ -30,7 +30,7 @@ erpnext.ItemSelector = Class.extend({
 
 	make_dialog: function() {
 		this.dialog = new frappe.ui.Dialog({
-			title: __('Add Items')
+			title: __('Add Items_in_erp_u_item_selector')
 		});
 		var body = $(this.dialog.body);
 		body.html('<div><p><input type="text" class="form-control"></p>\
@@ -63,7 +63,7 @@ erpnext.ItemSelector = Class.extend({
 		$.each(this.frm.doc.items || [], (i, d) => {
 			if(d[this.item_field]===item_code) {
 				frappe.model.set_value(d.doctype, d.name, 'qty', d.qty + 1);
-				frappe.show_alert({message: __("Added {0} ({1})", [item_code, d.qty]), indicator: 'green'});
+				frappe.show_alert({message: __("Added {0} ({1})_in_erp_u_item_selector", [item_code, d.qty]), indicator: 'green'});
 				added = true;
 				return false;
 			}
@@ -77,7 +77,7 @@ erpnext.ItemSelector = Class.extend({
 				() => frappe.timeout(0.1),
 				() => {
 					frappe.model.set_value(d.doctype, d.name, 'qty', 1);
-					frappe.show_alert({message: __("Added {0} ({1})", [item_code, 1]), indicator: 'green'});
+					frappe.show_alert({message: __("Added {0} ({1})_in_erp_u_item_selector", [item_code, 1]), indicator: 'green'});
 				}
 			]);
 		}

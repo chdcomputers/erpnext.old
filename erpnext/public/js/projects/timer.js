@@ -2,14 +2,14 @@ frappe.provide("erpnext.timesheet");
 
 erpnext.timesheet.timer = function(frm, row, timestamp=0) {
 	let dialog = new frappe.ui.Dialog({
-		title: __("Timer"),
+		title: __("Timer_in_erp_pr_timer"),
 		fields:
 		[
-			{"fieldtype": "Link", "label": __("Activity Type"), "fieldname": "activity_type",
+			{"fieldtype": "Link", "label": __("Activity Type_in_erp_pr_timer"), "fieldname": "activity_type",
 				"reqd": 1, "options": "Activity Type"},
-			{"fieldtype": "Link", "label": __("Project"), "fieldname": "project", "options": "Project"},
-			{"fieldtype": "Link", "label": __("Task"), "fieldname": "task", "options": "Task"},
-			{"fieldtype": "Float", "label": __("Expected Hrs"), "fieldname": "expected_hours"},
+			{"fieldtype": "Link", "label": __("Project_in_erp_pr_timer"), "fieldname": "project", "options": "Project"},
+			{"fieldtype": "Link", "label": __("Task_in_erp_pr_timer"), "fieldname": "task", "options": "Task"},
+			{"fieldtype": "Float", "label": __("Expected Hrs_in_erp_pr_timer"), "fieldname": "expected_hours"},
 			{"fieldtype": "Section Break"},
 			{"fieldtype": "HTML", "fieldname": "timer_html"}
 		]
@@ -34,8 +34,8 @@ erpnext.timesheet.timer = function(frm, row, timestamp=0) {
 				<span class="seconds">00</span>
 			</div>
 			<div class="playpause text-center">
-				<button class= "btn btn-primary btn-start"> ${ __("Start") } </button>
-				<button class= "btn btn-primary btn-complete"> ${ __("Complete") } </button>
+				<button class= "btn btn-primary btn-start"> ${ __("Start_in_erp_pr_timer") } </button>
+				<button class= "btn btn-primary btn-complete"> ${ __("Complete_in_erp_pr_timer") } </button>
 			</div>
 		`;
 	}
@@ -135,7 +135,7 @@ erpnext.timesheet.control_timer = function(frm, dialog, row, timestamp=0) {
 		if(cur_dialog && cur_dialog.get_value('expected_hours') > 0) {
 			if(flag && (currentIncrement >= (cur_dialog.get_value('expected_hours') * 3600))) {
 				frappe.utils.play_sound("alert");
-				frappe.msgprint(__("Timer exceeded the given hours."));
+				frappe.msgprint(__("Timer exceeded the given hours._in_erp_pr_timer"));
 				flag = false;
 			}
 		}

@@ -13,27 +13,27 @@ class CallPopup {
 			'fields': [{
 				'fieldname': 'name',
 				'label': 'Name',
-				'default': this.get_caller_name() || __('Unknown Caller'),
+				'default': this.get_caller_name() || __('Unknown Caller_in_erp_call_popup'),
 				'fieldtype': 'Data',
 				'read_only': 1
 			}, {
 				'fieldtype': 'Button',
-				'label': __('Open Contact'),
+				'label': __('Open Contact_in_erp_call_popup'),
 				'click': () => frappe.set_route('Form', 'Contact', this.call_log.contact),
 				'depends_on': () => this.call_log.contact
 			}, {
 				'fieldtype': 'Button',
-				'label': __('Open Lead'),
+				'label': __('Open Lead_in_erp_call_popup'),
 				'click': () => frappe.set_route('Form', 'Lead', this.call_log.lead),
 				'depends_on': () => this.call_log.lead
 			}, {
 				'fieldtype': 'Button',
-				'label': __('Create New Contact'),
+				'label': __('Create New Contact_in_erp_call_popup'),
 				'click': () => frappe.new_doc('Contact', { 'mobile_no': this.caller_number }),
 				'depends_on': () => !this.get_caller_name()
 			}, {
 				'fieldtype': 'Button',
-				'label': __('Create New Lead'),
+				'label': __('Create New Lead_in_erp_call_popup'),
 				'click': () => frappe.new_doc('Lead', { 'mobile_no': this.caller_number }),
 				'depends_on': () => !this.get_caller_name()
 			}, {
@@ -47,30 +47,30 @@ class CallPopup {
 			}, {
 				'fielname': 'last_interaction',
 				'fieldtype': 'Section Break',
-				'label': __('Activity'),
+				'label': __('Activity_in_erp_call_popup'),
 				'depends_on': () => this.get_caller_name()
 			}, {
 				'fieldtype': 'Small Text',
-				'label': __('Last Issue'),
+				'label': __('Last Issue_in_erp_call_popup'),
 				'fieldname': 'last_issue',
 				'read_only': true,
 				'depends_on': () => this.call_log.contact,
-				'default': `<i class="text-muted">${__('No issue has been raised by the caller.')}<i>`
+				'default': `<i class="text-muted">${__('No issue has been raised by the caller._in_erp_call_popup')}<i>`
 			}, {
 				'fieldtype': 'Small Text',
-				'label': __('Last Communication'),
+				'label': __('Last Communication_in_erp_call_popup'),
 				'fieldname': 'last_communication',
 				'read_only': true,
-				'default': `<i class="text-muted">${__('No communication found.')}<i>`
+				'default': `<i class="text-muted">${__('No communication found._in_erp_call_popup')}<i>`
 			}, {
 				'fieldtype': 'Section Break',
 			}, {
 				'fieldtype': 'Small Text',
-				'label': __('Call Summary'),
+				'label': __('Call Summary_in_erp_call_popup'),
 				'fieldname': 'call_summary',
 			}, {
 				'fieldtype': 'Button',
-				'label': __('Save'),
+				'label': __('Save_in_erp_call_popup'),
 				'click': () => {
 					const call_summary = this.dialog.get_value('call_summary');
 					if (!call_summary) return;
@@ -81,12 +81,12 @@ class CallPopup {
 						this.close_modal();
 						frappe.show_alert({
 							message: `
-								${__('Call Summary Saved')}
+								${__('Call Summary Saved_in_erp_call_popup')}
 								<br>
 								<a
 									class="text-small text-muted"
 									href="#Form/Call Log/${this.call_log.name}">
-									${__('View call log')}
+									${__('View call log_in_erp_call_popup')}
 								</a>
 							`,
 							indicator: 'green'
@@ -113,17 +113,17 @@ class CallPopup {
 		let title = '';
 		call_status = call_status || this.call_log.status;
 		if (['Ringing'].includes(call_status) || !call_status) {
-			title = __('Incoming call from {0}', [this.get_caller_name() || this.caller_number]);
+			title = __('Incoming call from {0}_in_erp_call_popup', [this.get_caller_name() || this.caller_number]);
 			this.set_indicator('blue', true);
 		} else if (call_status === 'In Progress') {
-			title = __('Call Connected');
+			title = __('Call Connected_in_erp_call_popup');
 			this.set_indicator('yellow');
 		} else if (call_status === 'Missed') {
 			this.set_indicator('red');
-			title = __('Call Missed');
+			title = __('Call Missed_in_erp_call_popup');
 		} else if (['Completed', 'Disconnected'].includes(call_status)) {
 			this.set_indicator('red');
-			title = __('Call Disconnected');
+			title = __('Call Disconnected_in_erp_call_popup');
 		} else {
 			this.set_indicator('blue');
 			title = call_status;
@@ -168,7 +168,7 @@ class CallPopup {
 				issue_field.set_value(issue.subject);
 				issue_field.$wrapper.append(`
 					<a class="text-medium" href="#List/Issue?customer=${issue.customer}">
-						${__('View all issues from {0}', [issue.customer])}
+						${__('View all issues from {0}_in_erp_call_popup', [issue.customer])}
 					</a>
 				`);
 			}

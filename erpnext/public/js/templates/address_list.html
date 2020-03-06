@@ -5,18 +5,18 @@
 		{%= i+1 %}. {%= addr_list[i].address_title %}{% if(addr_list[i].address_type!="Other") { %}
 		<span class="text-muted">({%= __(addr_list[i].address_type) %})</span>{% } %}
 		{% if(addr_list[i].is_primary_address) { %}
-		<span class="text-muted">({%= __("Primary") %})</span>{% } %}
+		<span class="text-muted">({%= __("Primary_in_erp_t_address_list") %})</span>{% } %}
 		{% if(addr_list[i].is_shipping_address) { %}
-		<span class="text-muted">({%= __("Shipping") %})</span>{% } %}
+		<span class="text-muted">({%= __("Shipping_in_erp_t_address_list") %})</span>{% } %}
 
 		<a href="#Form/Address/{%= encodeURIComponent(addr_list[i].name) %}" class="btn btn-default btn-xs pull-right"
 			style="margin-top:-3px; margin-right: -5px;">
-			{%= __("Edit") %}</a>
+			{%= __("Edit_in_erp_t_address_list") %}</a>
 	</p>
 	<p>{%= addr_list[i].display %}</p>
 </div>
 {% } %}
 {% if(!addr_list.length) { %}
-<p class="text-muted small">{%= __("No address added yet.") %}</p>
+<p class="text-muted small">{%= __("No address added yet._in_erp_t_address_list") %}</p>
 {% } %}
-<p><button class="btn btn-xs btn-default btn-address">{{ __("New Address") }}</button></p>
+<p><button class="btn btn-xs btn-default btn-address">{{ __("New Address_in_erp_t_address_list") }}</button></p>
